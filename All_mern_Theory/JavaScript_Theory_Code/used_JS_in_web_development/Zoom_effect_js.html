@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Basic Zoom Effict using Javascript</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+        text-align: center;
+        margin-top: 150px;
+      }
+    </style>
+    <script type="text/javascript">
+      var width = 100;
+      var difference = 2;
+      var interveralID = 0;
+      //document.getElementById("img1").style.width=width;
+
+      function increase() {
+        clearInterval(interveralID);
+        interveralID = setInterval(expand, 10);
+      }
+      function decrease() {
+        clearInterval(interveralID);
+        interveralID = setInterval(shrink, 10);
+      }
+      function expand() {
+        if (width < 600) {
+          width = width + difference;
+          document.getElementById("img1").style.width = width;
+          //console.log(width);
+        } else {
+          clearInterval(interveralID);
+        }
+      }
+      function shrink() {
+        if (width > 100) {
+          width = width - difference;
+          document.getElementById("img1").style.width = width;
+          //   console.log(width);
+        } else {
+          clearInterval(interveralID);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <img
+      onmouseover="increase()"
+      onmouseout="decrease()"
+      id="img1"
+      src="https://c4.wallpaperflare.com/wallpaper/654/989/292/love-image-4k-full-screen-wallpaper-preview.jpg"
+      width="100"
+    />
+  </body>
+</html>

@@ -1,0 +1,15 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+div {
+  text-align: center;
+}
+.btn {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}

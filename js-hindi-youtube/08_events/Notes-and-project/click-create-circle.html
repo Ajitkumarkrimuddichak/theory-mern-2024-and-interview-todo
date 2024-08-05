@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Circle Creator</title>
+    <style>
+      /* Styling for the canvas */
+      #myCanvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <script>
+      // Get the canvas element
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Function to draw a red circle at the specified coordinates
+      function drawRedCircle(x, y) {
+        ctx.beginPath();
+        ctx.arc(x, y, 50, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      // Event listener for mouse clicks
+      canvas.addEventListener("click", function (event) {
+        // Get the coordinates of the click relative to the canvas
+        const rect = canvas.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+
+        // Draw a red circle at the click coordinates
+        drawRedCircle(mouseX, mouseY);
+      });
+    </script>
+  </body>
+</html>

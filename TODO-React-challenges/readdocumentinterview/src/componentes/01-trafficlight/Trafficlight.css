@@ -1,0 +1,29 @@
+.Green {
+  background-color: green;
+}
+
+.Yellow {
+  background-color: yellow;
+}
+.Red {
+  background-color: red;
+}
+
+.light {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.wrapper {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #000;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}

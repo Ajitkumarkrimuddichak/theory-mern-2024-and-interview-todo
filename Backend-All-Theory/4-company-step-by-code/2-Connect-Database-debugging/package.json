@@ -1,0 +1,25 @@
+{
+  "name": "2-connect-database-debugging",
+  "version": "1.0.0",
+  "description": "connection database second step",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+  },
+  "keywords": [
+    "javascript",
+    "backend"
+  ],
+  "author": "Ajit kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.3"
+  }
+}

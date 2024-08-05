@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CtrlKey AltKey ShiftKey MetaKey</title>
+    <style>
+      #box {
+        width: 200px;
+        height: 200px;
+        border: 10px solid green;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script>
+      const target = document.querySelector("#box");
+      target.addEventListener("click", function (e) {
+        console.clear();
+
+        // let ctrl = e.ctrlKey;
+        // if (ctrl) {
+        //   console.log("You Pressed Control Key");
+        // } else {
+        //   console.log("You not Pressed Control Key");
+        // }
+
+        let key;
+        switch (true) {
+          case e.metaKey:
+            key = "Meta Key";
+            break;
+          case e.altKey:
+            key = "Alt Key";
+            break;
+          case e.ctrlKey:
+            key = "Control Key";
+            break;
+          case e.shiftKey:
+            key = "Shift Key";
+            break;
+
+          default:
+            key = " No Key Pressed";
+            break;
+        }
+        console.log(key);
+      });
+    </script>
+  </body>
+</html>

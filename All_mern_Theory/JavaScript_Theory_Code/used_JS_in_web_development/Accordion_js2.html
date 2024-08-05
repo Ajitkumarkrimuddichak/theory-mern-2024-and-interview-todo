@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      .accordion {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 450px;
+      }
+
+      .accordion-item {
+        margin-bottom: 10px;
+      }
+
+      .accordion-title {
+        color: #fff;
+        background-color: #dc2b2b;
+        cursor: pointer;
+        padding: 10px;
+        transition: background-color 1s;
+        border-radius: 20px;
+        text-align: center;
+      }
+
+      .accordion-title:hover {
+        background-color: #9a1616;
+      }
+
+      .accordion-content {
+        background: lightgoldenrodyellow;
+        display: none;
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+      .accordion-item.active .accordion-content {
+        display: block;
+      }
+      .arrow {
+        color: rgb(12, 236, 31);
+        margin-left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-title">
+          Accordion Title 1 <span class="arrow">&#x2B9F;</span>
+        </div>
+        <div class="accordion-content">
+          Accordion Content 1 Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Hic placeat maiores porro architecto repellendus? Numquam modi,
+          voluptatibus laboriosam cupiditate earum nobis accusamus quam
+          temporibus deleniti vitae ipsam rem ratione assumenda.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-title">
+          Accordion Title 2 <span class="arrow">&#x2B9F;</span>
+        </div>
+        <div class="accordion-content">
+          Accordion Content 2 Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Laudantium officiis nam earum enim laboriosam saepe
+          placeat eum consequatur cum? Laboriosam assumenda voluptatibus, cum
+          repellat illum vitae optio temporibus nemo quia!
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-title">
+          Accordion Title 3 <span class="arrow">&#x2B9F;</span>
+        </div>
+        <div class="accordion-content">
+          Accordion Content 3 Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Provident ad cumque minima sed consequatur quod at? Laborum
+          reprehenderit eos esse, voluptatum vitae ipsam? Soluta quo et, cum
+          consequatur maxime magnam!
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-title">
+          Accordion Title 4 <span class="arrow">&#x2B9F;</span>
+        </div>
+        <div class="accordion-content">
+          Accordion Content 4 Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Provident ad cumque minima sed consequatur quod at? Laborum
+          reprehenderit eos esse, voluptatum vitae ipsam? Soluta quo et, cum
+          consequatur maxime magnam!
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const accordionItems = document.querySelectorAll(".accordion-item");
+
+      accordionItems.forEach((item) => {
+        const title = item.querySelector(".accordion-title");
+        const content = item.querySelector(".accordion-content");
+
+        title.addEventListener("click", () => {
+          for (i = 0; i < accordionItems.length; i++) {
+            if (accordionItems[i] != item) {
+              accordionItems[i].classList.remove("active");
+            } else {
+              // toggle the accordion item
+              item.classList.toggle("active");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

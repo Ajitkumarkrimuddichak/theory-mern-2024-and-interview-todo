@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.block {
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+}
+
+.horizontal {
+  width: 100%;
+  height: 30px;
+}
+
+.vertical {
+  width: 50px;
+}
+
+.wrapper {
+  height: calc(100vh - 80px);
+  position: relative;
+  width: 100%;
+}

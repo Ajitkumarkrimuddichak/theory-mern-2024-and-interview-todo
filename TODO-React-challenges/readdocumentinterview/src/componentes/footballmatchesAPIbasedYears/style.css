@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.sidebar {
+  padding: 0;
+}
+
+.sidebar li {
+  background-color: #f5f5f5;
+  width: 100px;
+  margin: 2px;
+  cursor: pointer;
+  padding: 5px;
+}

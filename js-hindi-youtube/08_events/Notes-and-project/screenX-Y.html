@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>screenX & screenY Any Screen h-w deta hai</title>
+    <style>
+      #box {
+        width: 200px;
+        height: 200px;
+        border: 5px solid blue;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script>
+      //document.addEventListener("click", function (e) {
+      // document.addEventListener("mousemove", function (e) {
+      const target = document.querySelector("#box");
+      target.addEventListener("click", function (e) {
+        console.clear();
+        let x = e.screenX;
+        let y = e.screenY;
+        console.log("ScreenX :", x);
+        console.log("ScreenY :" + y);
+      });
+    </script>
+  </body>
+</html>

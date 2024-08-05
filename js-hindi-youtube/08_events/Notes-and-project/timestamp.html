@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Timestamp</title>
+  </head>
+  <body>
+    <div id="timestamp"></div>
+
+    <script>
+      // Function to get current timestamp
+      function getCurrentTimestamp() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const day = String(now.getDate()).padStart(2, "0");
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+      }
+
+      // Update timestamp every second
+      function updateTimestamp() {
+        const timestampElement = document.getElementById("timestamp");
+        timestampElement.textContent = getCurrentTimestamp();
+      }
+
+      // Initial call to display timestamp
+      updateTimestamp();
+
+      // Update timestamp every second
+      setInterval(updateTimestamp, 1000);
+    </script>
+  </body>
+</html>

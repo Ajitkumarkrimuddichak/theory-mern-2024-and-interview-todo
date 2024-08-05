@@ -1,0 +1,3 @@
+routes bahut sare hote hai to usake liye separate folder / file ka used karate hai
+
+// routes :- /instagram , /login , /reg 

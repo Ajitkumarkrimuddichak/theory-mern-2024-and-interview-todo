@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+      body {
+        background-color: hsl(250, 17%, 94%);
+        height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+      }
+
+      .main {
+        background-color: white;
+        border: 5px solid white;
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+          0 6px 15px 0 rgba(0, 0, 0, 0.1);
+        place-items: center;
+      }
+      .textBox {
+        background-color: white;
+        font-size: 18px;
+        height: 35px;
+        width: 100%;
+        border: 1px solid rgb(66, 65, 65);
+        border-radius: 10px;
+      }
+
+      .btn1 {
+        background-color: rgb(85, 131, 241);
+        border: 4px solid rgb(85, 131, 241);
+        text-align: center;
+        font-size: 44px;
+        border: 1px solid black;
+        border-radius: 100%;
+      }
+
+      .btn2 {
+        background-color: rgb(85, 131, 241);
+        border: 4px solid rgb(85, 131, 241);
+        text-align: center;
+        font-size: 44px;
+        border: 1px solid black;
+        border-radius: 100%;
+      }
+      .btn3 {
+        background-color: rgb(85, 131, 241);
+        border: 4px solid rgb(85, 131, 241);
+        text-align: center;
+        font-size: 44px;
+        border: 1px solid black;
+        border-radius: 100%;
+      }
+      .btn4 {
+        background-color: rgb(85, 131, 241);
+        border: 4px solid rgb(85, 131, 241);
+        text-align: center;
+        font-size: 48px;
+        border: 1px solid black;
+        border-radius: 100%;
+      }
+      .btn5 {
+        background-color: rgb(85, 131, 241);
+        border: 4px solid rgb(85, 131, 241);
+        text-align: center;
+        font-size: 48px;
+        border: 1px solid black;
+        border-radius: 100%;
+      }
+      .clear {
+        background-color: red;
+        font-size: 30px;
+        border-radius: 10px;
+        text-align: center;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <div>
+      <form name="forms" class="main">
+        <input
+          class="textBox"
+          type="text"
+          name="answer"
+          placeholder="Enter Number"
+        /><br /><br />
+
+        <input
+          class="btn1"
+          type="button"
+          value=" 1 "
+          onClick="forms.answer.value += '1'"
+        />
+        <input
+          class="btn1"
+          type="button"
+          value=" 2 "
+          onClick="forms.answer.value += '2'"
+        />
+
+        <input
+          class="btn1"
+          type="button"
+          value=" 3 "
+          onClick="forms.answer.value += '3'"
+        />
+
+        <br /><br />
+
+        <input
+          class="btn2"
+          type="button"
+          value=" 4 "
+          onClick="forms.answer.value += '4'"
+        />
+        <input
+          class="btn2"
+          type="button"
+          value=" 5 "
+          onClick="forms.answer.value += '5'"
+        />
+        <input
+          class="btn2"
+          type="button"
+          value=" 6 "
+          onClick="forms.answer.value += '6'"
+        /><br /><br />
+
+        <input
+          class="btn3"
+          type="button"
+          value=" 7 "
+          onClick="forms.answer.value += '7'"
+        />
+        <input
+          class="btn3"
+          type="button"
+          value=" 8 "
+          onClick="forms.answer.value += '8'"
+        />
+        <input
+          class="btn3"
+          type="button"
+          value=" 9 "
+          onClick="forms.answer.value += '9'"
+        /><br /><br />
+
+        <input
+          class="btn4"
+          type="button"
+          value=" + "
+          onClick="forms.answer.value += '+'"
+        />
+        <input
+          class="btn4"
+          type="button"
+          value=" - "
+          onClick="forms.answer.value += '-'"
+        />
+        <input
+          class="btn4"
+          type="button"
+          value=" * "
+          onClick="forms.answer.value += '*'"
+        /><br /><br />
+
+        <input
+          class="btn5"
+          type="button"
+          value=" / "
+          onClick="forms.answer.value += '/'"
+        />
+        <input
+          class="btn5"
+          type="button"
+          value=" 0 "
+          onClick="forms.answer.value += '0'"
+        />
+        <input
+          class="btn5"
+          type="button"
+          value=" = "
+          onClick="forms.answer.value = eval(forms.answer.value)"
+        /><br /><br />
+
+        <input
+          class="clear"
+          type="button"
+          value="Clear All"
+          onclick="forms.answer.value = '' "
+        />
+      </form>
+    </div>
+  </body>
+</html>

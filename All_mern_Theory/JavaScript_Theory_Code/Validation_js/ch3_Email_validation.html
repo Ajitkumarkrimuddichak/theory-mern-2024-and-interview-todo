@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="myform" onsubmit="return myfun()" style="text-align: center">
+      <h2>Email Validation</h2>
+      <input type="text" name="Email" value="" placeholder="Enter Your Email" />
+      <span id="message" style="color: red"></span><br /><br />
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      function myfun() {
+        var a = document.myform.Email.value;
+        if (a == "") {
+          document.getElementById("message").innerHTML =
+            "**please fil user name";
+          return false;
+        }
+        if (a.indexOf("@") <= 0) {
+          document.getElementById("message").innerHTML =
+            "** Invalid @ Position";
+          return false;
+        }
+        if (a.charAt(a.length - 4) != "." && a.charAt(a.length - 3) != ".") {
+          document.getElementById("message").innerHTML =
+            "**Invalid . Possition";
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

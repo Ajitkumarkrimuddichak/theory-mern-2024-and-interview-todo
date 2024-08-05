@@ -1,0 +1,19 @@
+{
+  "name": "1-setup-professional-project",
+  "version": "1.0.0",
+  "description": "backend first step",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "javascript",
+    "backend"
+  ],
+  "author": "Ajit kumar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

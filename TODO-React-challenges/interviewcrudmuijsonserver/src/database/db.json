@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ajit kumar",
+      "username": "Ajit kumar",
+      "email": "ajitkumar@gmail.com",
+      "phone": "7870378974"
+    },
+    {
+      "name": "Ram kumar",
+      "username": "Patnabihar",
+      "email": "rampatna@gmail.com",
+      "phone": "87854545445",
+      "id": 3
+    },
+    {
+      "name": "Bhushan ",
+      "username": "kumar",
+      "email": "bhashan@gmail.com",
+      "phone": "54576979797979",
+      "id": 4
+    }
+  ]
+}

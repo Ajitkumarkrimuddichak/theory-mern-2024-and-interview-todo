@@ -1,0 +1,18 @@
+gateway :-
+
+
+ localhost: 
+ 
+ 9001/order/ 
+ localhost:
+  9001/payment/ 
+  client : 
+  //modules
+Service
+ Order
+  8081 
+  user 
+  8082 
+  payment 
+  /getpaymentbyid/1jh 
+  8083

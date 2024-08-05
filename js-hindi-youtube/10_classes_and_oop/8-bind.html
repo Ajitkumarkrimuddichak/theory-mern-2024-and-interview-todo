@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bind in JS</title>
+  </head>
+  <body>
+    <h1>Real Example Bind</h1>
+    <button>Button Clicked</button>
+  </body>
+  <script>
+    /* Hame two requirement hai jise achive karana hai
+    pahala pala hai button ka reference mil jaye or dusara me 
+    click karane pe kuchh aajaye/submit hojaye
+    */
+    class React {
+      constructor() {
+        //jaise hi new create kiya to constructor reference dega sabhi button/or Sabhi ka
+        this.library = "React"; //Veriable deciler
+        this.server = "https://localhost:3000";
+
+        document
+          .querySelector("button") //kuchh manual code likhana hoga// virtual DOM banane ke liye // sab ka reference liya hoga page pe jitane element hai un saka //document se hi lena parata hai//or koi option nahi hai //yehi c++ ka document chalata hai
+          //.addEventListener("click", this.handleClick); //handleClick to direct kam to nahi karega isi liye this lagana hi hoga// console.log(this.server) access kar rahe hai to vahi purani kahani call vala ki this ka reference kahi kho gaya hai isi liye undefined aaraha hai// but only for this ke pass button ka reference hai
+          .addEventListener("click", this.handleClick.bind(this)); //isame se jitana bhi variable hai chahe function hai vah sabhi bind(this) ke sath chale jate hai/lekin kisi ko override nahi kiya hai
+      }
+      handleClick() {
+        console.log("button clicked");
+        console.log(this); //isake pass button ka reference to hai
+        console.log(this.server); //variable ko access kiya
+      }
+    }
+    const app = new React(); //jaise hi yah page load ho to one Object create ho React ka
+  </script>
+</html>

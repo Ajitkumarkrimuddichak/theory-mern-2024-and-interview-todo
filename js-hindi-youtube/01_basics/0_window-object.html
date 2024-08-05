@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>let, const, and var Example Window Object</title>
+  </head>
+  <body>
+    <script>
+      var globalVar = "var variable";
+      let globalLet = "let variable";
+      const globalConst = "const variable";
+
+      // Checking if the variables are added to the window object
+      console.log(window.globalVar); // Output: "var variable"
+      console.log(window.globalLet); // Output: undefined
+      console.log(window.globalConst); // Output: undefined
+    </script>
+  </body>
+</html>

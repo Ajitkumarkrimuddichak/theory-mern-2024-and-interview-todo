@@ -1,0 +1,22 @@
+.collapsible-panell {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.coll {
+  background-color: #f2f2f2;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.collapsible-panel-content {
+  padding: 10px;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+.collapsible-panel-content.collapsed {
+  height: 0;
+}

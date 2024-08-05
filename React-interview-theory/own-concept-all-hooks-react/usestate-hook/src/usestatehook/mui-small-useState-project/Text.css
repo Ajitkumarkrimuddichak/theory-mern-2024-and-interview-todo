@@ -1,0 +1,26 @@
+.row {
+  margin-top: 20px;
+  background-color: rgb(129, 250, 204);
+}
+.text {
+  margin-top: 30px;
+  text-align: center;
+}
+.data {
+  background-color: rgb(190, 190, 130);
+  margin-top: -250px;
+  width: 100%;
+  align-items: center;
+}
+
+.dataval {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: rgba(248, 7, 7, 0.25) 0px 54px 55px,
+    rgba(230, 199, 199, 0.12) 0px -12px 30px,
+    rgba(241, 68, 68, 0.12) 0px 4px 6px, rgba(79, 228, 20, 0.17) 0px 12px 13px,
+    rgba(162, 136, 223, 0.09) 0px -3px 5px;
+  align-items: center;
+}

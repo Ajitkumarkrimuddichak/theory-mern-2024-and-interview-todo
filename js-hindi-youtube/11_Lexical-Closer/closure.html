@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexical scoping & Closure</title>
+  </head>
+  <body style="background-color: #313131">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    // Don't repeat yourself / Ber-ber likhana perega or raha to
+    // document.getElementById("orange").onclick = function () {
+    //   //onclick one function leta hai
+    //   document.body.style.backgroundColor = `orange`;
+    // };
+    // document.getElementById("green").onclick = function () {
+    //   document.body.style.backgroundColor = `green`;
+    // };
+
+    //(or) Generalized concept // Real use case scenario Ex:-
+    function clickHandler(color) {
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      }; // used in Lexical scoping & Closer.
+    }
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("red");
+  </script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Click Time</title>
+    <style>
+      /* Styling for the image */
+      #clickImage {
+        width: 500px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Image to click -->
+    <img
+      id="clickImage"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3X_V347q2s8iwPb0nvHVQmiTjJ64FESrHBDpjrPOyJ7PTy86zxYz-MxAreWrlE4NiUYc&usqp=CAU"
+      alt="Click me"
+    />
+
+    <!-- Element to display time -->
+    <div id="timeDisplay"></div>
+
+    <script>
+      // Function to display current time
+      function displayCurrentTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+        return `${hours}:${minutes}:${seconds}`;
+      }
+
+      // Function to update time display
+      function updateTimeDisplay() {
+        const timeDisplayElement = document.getElementById("timeDisplay");
+        timeDisplayElement.textContent =
+          "Last clicked time: " + displayCurrentTime();
+      }
+
+      // Add click event listener to the image
+      const clickImage = document.getElementById("clickImage");
+      clickImage.addEventListener("click", updateTimeDisplay);
+    </script>
+  </body>
+</html>

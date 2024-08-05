@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onclick="return myfun()" name="forms" style="text-align: center">
+      <h2>Radio Button Validation</h2>
+      <input type="redio" name="container" value="Ajit1" /> Ajit1<br /><br />
+      <input type="redio" name="container" value="Ajit2" /> Ajit2<br /><br />
+      <input type="redio" name="container" value="Ajit3" /> Ajit3
+      <div>
+        <p id="message" style="color: red"></p>
+      </div>
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      function myfun() {
+        var a = document.forms.container;
+        for (i = 0; i < a.length; i++) {
+          if (a[i].checked == true) return true;
+        }
+        document.getElementById("message").innerHTML =
+          "** Please Select anyone";
+        return false;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onclick="return myfun()" style="text-align: center">
+      <h2>Mobile Number Validation</h2>
+      <input
+        type="text"
+        id="mobilenumber"
+        value=""
+        placeholder="Enter Your Name"
+      />
+      <span id="message" style="color: red"></span><br /><br />
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      function myfun() {
+        var a = document.getElementById("mobilenumber").value;
+        if (a == "") {
+          document.getElementById("message").innerHTML =
+            "**please fil mobile number";
+          return false;
+        }
+        if (isNaN(a)) {
+          document.getElementById("message").innerHTML = "** Enter only number";
+          return false;
+        }
+        if (a.length < 10) {
+          document.getElementById("message").innerHTML =
+            "**mobile number must be 10 digit";
+          return false;
+        }
+        if (a.length > 10) {
+          document.getElementById("message").innerHTML =
+            "**mobile number must be 10 digit";
+          return false;
+        }
+        if (a.charAt(0) != 9 && a.charAt(0) != 8 && a.charAt(0) != 7) {
+          document.getElementById("message").innerHTML =
+            "** mobile number must start with 9,8 and 7";
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

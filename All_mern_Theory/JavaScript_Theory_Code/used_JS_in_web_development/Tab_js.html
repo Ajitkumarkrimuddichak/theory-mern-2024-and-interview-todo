@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs javascript</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #e7e7e7;
+      }
+
+      .tab {
+        width: 500px;
+        overflow: hidden;
+      }
+
+      .tab button {
+        background-color: #90caf8;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 16px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .tab button:hover {
+        background-color: #74aedd;
+      }
+
+      .tab button.active {
+        background-color: #fff;
+      }
+
+      .tabcontent {
+        background: #fff;
+        width: 500px;
+        display: none;
+        padding: 6px 12px;
+        font-family: arial;
+        line-height: 21px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks" data-tab="tab1">Tab 1</button>
+      <button class="tablinks" data-tab="tab2">Tab 2</button>
+      <button class="tablinks" data-tab="tab3">Tab 3</button>
+    </div>
+
+    <div id="tab1" class="tabcontent">
+      <h2>Tab 1</h2>
+      <p>
+        Content for tab 1 goes here. Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Hic similique dolores enim. Expedita provident sequi
+        nobis suscipit asperiores molestias ipsam voluptate maxime alias dolorum
+        pariatur molestiae blanditiis eum, labore a incidunt similique. Rem fuga
+        commodi ea officiis nihil delectus, nobis blanditiis officia praesentium
+        quidem itaque eum nemo! Ipsam pariatur quibusdam distinctio quasi
+        consectetur aliquam! Dolorem veritatis quisquam necessitatibus eveniet
+        voluptate, est repudiandae dicta rerum sed voluptatum. Nobis
+        necessitatibus ea recusandae minus pariatur? Consequatur, rerum
+        assumenda? Labore, provident nulla! Mollitia blanditiis sapiente
+        debitis. Adipisci nam nihil facere aut incidunt explicabo, vel fugiat
+        cum expedita nostrum. Esse quibusdam itaque tenetur laudantium cum.
+      </p>
+    </div>
+
+    <div id="tab2" class="tabcontent">
+      <h2>Tab 2</h2>
+      <p>
+        Content for tab 2 goes here. Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Assumenda aperiam, labore autem placeat laboriosam
+        adipisci ea facilis. Fugit voluptatibus enim ratione ad obcaecati
+        cumque, aperiam doloremque voluptas accusantium nihil ullam accusamus
+        autem corporis incidunt nisi illo deleniti minima reprehenderit. In
+        suscipit dolor saepe molestiae ad iure facere architecto cumque dolores.
+      </p>
+    </div>
+
+    <div id="tab3" class="tabcontent">
+      <h2>Tab 3</h2>
+      <p>
+        Content for tab 3 goes here. Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Nihil iusto harum, veniam exercitationem iure qui iste
+        quam consectetur officiis nemo?
+      </p>
+    </div>
+    <script>
+      var tabButtons = document.querySelectorAll(".tablinks");
+
+      for (var i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].addEventListener("click", function () {
+          var tabName = this.dataset.tab;
+          var tabContent = document.getElementById(tabName);
+          var allTabContent = document.querySelectorAll(".tabcontent");
+          var allTabButtons = document.querySelectorAll(".tablinks");
+
+          for (var j = 0; j < allTabContent.length; j++) {
+            allTabContent[j].style.display = "none";
+          }
+
+          for (var k = 0; k < allTabButtons.length; k++) {
+            allTabButtons[k].classList.remove("active");
+          }
+
+          tabContent.style.display = "block";
+          this.classList.add("active");
+        });
+      }
+
+      document.querySelector(".tablinks").click();
+    </script>
+  </body>
+</html>

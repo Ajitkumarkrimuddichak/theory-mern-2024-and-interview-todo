@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar in javascript</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", "sans-serif";
+}
+.wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #dfe6e9;
+}
+.calendar {
+  margin: auto;
+  width: 600px;
+  /* height: 400px; */
+  background-color: #fff;
+  box-shadow: 0px 0px 15px 4px rgb(32, 148, 202, 1);
+}
+.month {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 40px 30px;
+}
+.weekends {
+  display: flex;
+  background-color: #27ae60;
+  color: #fff;
+  padding: 8px 0;
+  background-color: rgb(175, 6, 6);
+}
+.weekends div {
+  width: 14028%;
+  text-align: center;
+}
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  font-weight: 300;
+  padding: 10px 0;
+}
+.days div {
+  width: 14.28%;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  transition: all 0.4s;
+}
+.days div:hover {
+  background-color: #e4a9a9;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.today {
+  background-color: #27ae60;
+  color: #fff;
+  border-radius: 100%;
+}
+.prev_date {
+  color: rgb(245, 101, 149);
+}
+#month {
+  font-size: 30px;
+  font-weight: 500;
+}
+.prev,
+.next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgb(68, 38, 38);
+  cursor: pointer;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="calendar">
+        <div class="month"> 
+            <div class="prev">
+                <span>&#10094</span>
+            </div>
+            <div>
+                <h2 id="month">June</h2>
+                <p id="date_str">Sat Jun 01 2019</p>
+            </div>
+            <div class="next">
+                <span>&#10095</span>
+            </div>
+        </div>
+        <div class="weekends">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="days">
+            <div class="prev_date">26</div>
+            <div class="prev_date">27</div>
+            <div class="prev_date">28</div>
+            <div class="prev_date">29</div>
+            <div class="prev_date">30</div>
+            <div class="prev_date">31</div>
+            <div>1</div>
+            <div>2</div>
+            <div class="today">3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+            <div>17</div>
+            <div>18</div>
+            <div>19</div>
+            <div>20</div>
+            <div>21</div>
+            <div>22</div>
+            <div>23</div>
+            <div>24</div>
+            <div>25</div>
+            <div>26</div>
+            <div>27</div>
+            <div>28</div>
+            <div>29</div>
+            <div>30</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

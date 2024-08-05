@@ -1,0 +1,4 @@
+// koi bhi code in-between run karana hai //app ke pas yek request aai vah request
+// server par full-file kare usase pahe bich me kuchh cheking lagana chahata hu to
+// vah middleware ke andar karate hai
+//Ex:- middleware laga dunga ki pahale kukij do taki pahale pata karu ki aap us information ko lene yogay ho bhi ki nahi

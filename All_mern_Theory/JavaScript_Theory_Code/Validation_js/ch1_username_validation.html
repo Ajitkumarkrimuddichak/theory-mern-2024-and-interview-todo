@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onclick="return myfun()" style="text-align: center">
+      <h2>User Name Validation</h2>
+      <input
+        type="text"
+        id="user_Name"
+        value=""
+        placeholder="Enter Your Name"
+      />
+      <span id="message" style="color: red"></span><br /><br />
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      function myfun() {
+        var correct_way = /^[A-Za-z]+$/;
+        var a = document.getElementById("user_Name").value;
+        if (a == "") {
+          document.getElementById("message").innerHTML =
+            "**please fil user name";
+          return false;
+        }
+        if (a.length < 4) {
+          document.getElementById("message").innerHTML =
+            "** userName must be 4 character";
+          return false;
+        }
+        if (a.length > 20) {
+          document.getElementById("message").innerHTML =
+            "**user name must be less then 20char";
+          return false;
+        }
+        if (a.match(correct_way)) {
+          true;
+          alert("Success fully data entery");
+        } else {
+          document.getElementById("message").innerHTML =
+            "** only alphabates are allows";
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

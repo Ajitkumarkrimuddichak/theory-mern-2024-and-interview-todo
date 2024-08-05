@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM learning | Document Object Modal</title>
+    <style>
+      .bg-black {
+        background-color: #110606;
+        color: #f6eaea;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">
+        DOM learning
+        <span style="display: none">test text</span>
+      </h1>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h2>Lorem ipsum dolor sit.</h2>
+      <h1>Lorem ipsum dolor sit.</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <input type="password" name="" id="ajit" />
+
+      <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+<!-- First run HTML and inspect and write down code
+
+  **** Query Selecter/Attribut nikalane ka tarika hai ****
+
+1) document.getElementById('title') // getElementById() Mathods hai
+Ex:- output <h1 id=​"title" class=​"heading">​" DOM learning "<span style=​"display:​ none">​test text​</span>​</h1>​
+2) document.getElementById('title').id
+Ex:- output 'title
+3) document.getElementById('title').className
+Ex:- output 'heading'
+4) document.getElementById('title').getAttribute('id') //New Method
+Ex:- output 'title'
+5) document.getElementById('title').getAttribute('class')
+Ex:- output 'heading' 
+
+6) document.getElementById('title').setAttribute('class','test') // check karana hai to Element vala option me 
+7) document.getElementById('title').setAttribute('class','test heading')  // check karana hai to Element vala option me
+8) const title = document.getElementById('title')
+   title enter
+   Ex:- output <h1 id=​"title" class=​"heading">​" DOM learning "<span style=​"display:​ none">​test text​</span>​</h1>​
+9) title.style.backgroundColor = 'red' //jisaka id hai usame red hoga
+10) title.style.padding = '20px' 
+
+//***** or *****
+1) document.getElementsByClassName('heading')
+Ex:-output HTMLCollection [h1#title.heading, title: h1#title.heading]
+0: h1#title.heading title : h1#title.heading length : 1 [[Prototype]] : HTMLCollection
+
+//**** mainly used real time *****
+1) document.querySelector('h1') // one hi select kar ke dega
+ Ex:- output <h1 id="title" class="heading">DOM learning <span style="display: none">test text</span></h1>
+2) document.querySelector('#title') // Id value access actualy css ka All selecter hi work karate hai jo ki or bhi check kar sakate hai
+3) document.querySelector('.heading') // class value access
+4) document.querySelector('ul')
+   const myul = document.querySelector('ul')
+   myul.querySelector('li')
+   const turnGreen = myul.querySelector('li')
+   turnGreen.style.backegroundColor = "green"
+5) turnGreen.innerText
+  Ex:- output one
+6) turnGreen.innerText = 'ajit' 
+Ex:- output ajit
+
+//or mainly used real time
+1) document.querySelectorAll('li')
+Ex:- output me sare li milega jo ki node list bolate hai
+2) const tempList = document.querySelectorAll('li')
+tempList enter karo to sara li mil jayega joki not Array hai
+3) tempList[0].style.color = 'green'
+Ex:- output green
+
+//sabhi accessible //Loop is Working
+4) tempList.ForEach(function (l) { 
+  l.style.backgroundColor = 'red'
+})
+
+// or
+1) document.getElementsByClassName('list-item')
+Ex:- output HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+2) const tempClassList = document.getElementsByClassName('list-item')
+   tempClassList.forEach(function(li){
+    console.log(li)//Error dega kyo ki // html collection hai isi liye convert karna parega pahale
+   })
+3) const myConvertedArray = Array.from(tempClassList)//Array me conver kiya fir loop laga ke pura value ko access kar sakate hai
+myConvertedArray.forEach(function(li){
+  li.style.color = 'orange'
+})
+
+
+**** Get Methods/title se kai bar value/content bhi nikalana parata hai ****
+1) title.textContent
+  Ex:- output DOM learning
+2) title.innerHTML
+  Ex:- output DOM learning
+3) title.innerText
+  Ex:- 'DOM learning'
+=>getAttribute
+
+Difference between textContent vs innerText :-
+innerText :- ka to jo text vasible hai vahi aayega.
+textContent :- ke andar sara ke sara milata hai.
+innerHTML :- pura value de raha hai or usake andar html likh rakha hai usako bhi dega
+-->
+
+<!-- Set Method:-
+  innerText
+  innerHTML
+  setAttribute
+  Attribute
+-->
+
+<!-- Traversal Methods :-
+  ParentNode
+  ParentElement
+  children
+  childNode
+  firstChild
+  lastChild
+  nextSibling
+-->
+
+<!-- Create Methods :-  
+  createElement
+  createTextNode
+  createComment
+-->
+<!-- Append Methods :- 
+  appendChild
+  insertBefore
+-->
+<!-- Replace/remove Child :- 
+  replaceChild
+  removeChild
+-->
+<!-- Form Events :- 
+  onfocus
+  onblur
+  oninput
+  onsubmit
+-->
+
+<!-- Browser Object Model (BOM) refers to the interaction and manipulation of 
+the browser's components through JavaScript. 
+Ex:-window.alert('Hello, world!');
+console.log(window.screen.width);
+-->

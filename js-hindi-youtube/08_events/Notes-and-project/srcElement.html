@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling with srcElement</title>
+  </head>
+  <body>
+    <button id="myButton">Click me!</button>
+
+    <script>
+      // Define a function to handle an event
+      function handleClick(e) {
+        //console.log(e);
+        // Get the element that triggered the e
+        var element = e.srcElement || e.target;
+
+        // Do something with the element, for example, log its tag name
+        console.log("Element tag name:", element.tagName);
+      }
+
+      // Add an event listener to the button element
+      var button = document.getElementById("myButton");
+      button.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>

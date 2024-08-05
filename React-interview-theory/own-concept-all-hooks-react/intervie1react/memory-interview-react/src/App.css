@@ -1,0 +1,83 @@
+/* Game css Start */
+/* .App {
+  text-align: center;
+}
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.card {
+  height: 30px;
+  width: 30px;
+  background-color: lightgreen;
+  padding: 10px;
+}
+
+.show {
+  font-size: 30px;
+}
+.hide {
+  font-size: 0;
+}
+.remove {
+  visibility: hidden;
+}
+
+button {
+  width: 140px;
+  height: 40px;
+  background-color: purple;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+} */
+/* Game css end */
+
+/* Fome css Start */
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+label {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+input {
+  height: 30px;
+  font-size: 20px;
+  padding: 7px;
+  margin: 30px 0;
+}
+
+button {
+  width: 120px;
+  height: 45px;
+  border: none;
+  font-size: 20px;
+  background-color: purple;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* Fome css End */

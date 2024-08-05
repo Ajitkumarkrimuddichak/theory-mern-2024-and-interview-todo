@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "Name": "Ajit",
+    "username": "Ajit kumar",
+    "email": "ajitkumar@gmail.com",
+    "Address": {
+      "State": "bihar",
+      "city": "patna",
+      "zipcode": "6666-454",
+      "geo": {
+        "lat": "-123.22",
+        "lng": "4545.545"
+      }
+    },
+    "phone": "89999978",
+    "websit": "https.www/ajir",
+    "company": {
+      "name": {
+        "name": "karmalab",
+        "catyt": "bengaluru"
+      }
+    }
+  }
+]

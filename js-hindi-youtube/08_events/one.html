@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <h3>
+      JS code Sequencily run || But khuchh Exception Un-sequencly run ||This
+      page only for Browser Event hai
+    </h3>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+          <!--ye aproach achha nahi hai HTML me but React me sahi hai onclick="alert('owl')" -->
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // Note:- JS me jitane bhi Events hote hai oh sequencelly Run hote hai kuchh Exception bhi hai
+    //(1) HTML ke Andar Inject Nahi Kariye || Yaha Pure JS hai || React me kar sakate hai
+    // <li>
+    //   <img
+    //     width="200px"
+    //     id="owl"
+    //     src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+    //     alt=""
+    //     onclick="alert('owl clicked')"
+    //   />
+    // </li>
+
+    //(2) old Concept kam features provide karata hai
+    // document.getElementById("owl").onclick = function () {
+    //   alert("Owl clicked");
+    // };
+
+    //(3) New Concept features jada provide karata hai
+    // document.getElementById("owl").addEventListener("click", function () {
+    //   alert("owl clicked");
+    // },false); //addEventListener Three Parameter leta hai
+
+    // Event Object  "Dip Lerning"
+    // Men Topic Event Object Learning
+    // type,timestamp,defaultPrevented,target,toElement,srcElement,currentTarget,clientX,clientY,screenX,screenY,altkey,ctrlkey,shiftkey,keyCode
+
+    // document.getElementById("owl").addEventListener("click", function (e) {
+    //   console.log(e);
+    // },false); //(false/true)//notes book me
+
+    // Event Propagation Working
+    //(1)Event babuling Working Bottom to top Ex:-
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Clicked inside the ul");
+    //   },
+    //   false
+    // ); //false value sabhi log nahi likhate hai
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Owl Clicked");
+    //   },
+    //   false
+    // ); //false hata bhi sakate hai aap par depend karata hai code me used kaisa hai
+
+    //(or)Kai bar ham nahi chahate ki Event ka babuling ho to app one method used kare
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Clicked inside the ul");
+    //   },
+    //   false
+    // );
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Owl Clicked");
+    //     e.stopPropagation(); //Babling na ho :- inner element alag rah jaye or outer element alag rah jaye is method used kare
+    //   },
+    //   false
+    // );
+
+    //(or) e.preventDefault() :-Google link hai jo ki working hai but Default behaiver kane se change hoga jo ki link not working
+    // document.getElementById("google").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     e.preventDefault();
+    //     console.log("google clicked");
+    //   },
+    //   false
+    // );
+
+    //(2)Event Capturing Working top to Bottom  Ex:-
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Clicked inside the ul");
+    //   },
+    //   true
+    // );
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Owl Clicked");
+    //   },
+    //   true
+    // );
+
+    //project //one click and remove image
+    // document.querySelector("#images").addEventListener("click", function (e) {
+    //   //console.log(e.target);
+    //   console.log(e.target.parentNode);
+    //   let removeIt = e.target.parentNode;
+    //   removeIt.remove();
+    // });
+
+    //(or)
+    document.querySelector("#images").addEventListener("click", function (e) {
+      console.log(e.target.tagName);
+      if (e.target.tagName === "IMG") {
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+      }
+    });
+  </script>
+</html>

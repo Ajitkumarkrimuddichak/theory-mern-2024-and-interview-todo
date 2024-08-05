@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <title>FAQ Accordion Card</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+      :root {
+        --softRed: hsl(14, 88%, 65%);
+        --veryDarkGrayBlue: hsl(237, 12%, 33%);
+        --darkGrayBlue: hsl(240, 6%, 50%);
+        --lightGrayBlue: hsl(240, 5%, 91%);
+        --fontSize: 12px;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: var(--fontSize);
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .wrapper {
+        background: white;
+        border-radius: 30px;
+        height: 509px;
+        width: 920px;
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        grid-gap: 6rem;
+        background-image: url(/images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: 1260% 65%;
+      }
+
+      .question-answer__accordion > .answer {
+        display: none;
+      }
+
+      .active > .answer {
+        display: block;
+        padding-bottom: 1.3rem;
+        color: var(--darkGrayBlue);
+      }
+
+      .active img {
+        transform: rotate(180deg);
+        transition: all 0.3s ease-in;
+      }
+
+      .accordion__wrapper {
+        margin-top: 65px;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      .questions__accordions {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .question-answer__accordion {
+        width: 350px;
+        border-bottom: 1px solid #e8e8ea;
+      }
+      .title__accordion {
+        font-size: 3rem;
+        margin-top: 0px;
+      }
+
+      .title__question {
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: (var(--veryDarkGrayBlue));
+        margin: 1.4rem 0rem;
+      }
+
+      .question {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+
+      .active h3 {
+        font-weight: 700;
+      }
+
+      .question img {
+        align-self: center;
+      }
+
+      .image__wrapper {
+        position: relative;
+      }
+
+      .image__wrapper_inner {
+        background: url(/images/illustration-woman-online-desktop.svg);
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 120% center;
+      }
+
+      .box {
+        position: absolute;
+        top: 42%;
+        left: -25%;
+      }
+
+      @media (max-width: 700px) {
+        .wrapper {
+          width: 350px;
+          grid-template-columns: 1fr;
+          grid-template-rows: 100px 1fr;
+          grid-gap: 0.5rem;
+          position: relative;
+          padding: 1rem;
+          height: 530px;
+        }
+        .image__wrapper {
+          background: url("./images/bg-pattern-mobile.svg");
+          background-repeat: no-repeat;
+          background-position: center 590%;
+        }
+
+        .image__wrapper_inner {
+          position: absolute;
+          width: 100%;
+          height: 200px;
+          background-size: 72%;
+          background-position: center;
+          top: -129%;
+        }
+        .box {
+          width: 55px;
+          left: 19%;
+          top: -30%;
+        }
+        .accordion__wrapper {
+          margin-top: 0px;
+        }
+        .question-answer__accordion {
+          width: 100%;
+        }
+        .title__accordion {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrapper">
+      <div class="image__wrapper">
+        <div class="image__wrapper_inner"></div>
+        <img class="box" src="/images/illustration-box-desktop.svg" alt="box" />
+      </div>
+      <div class="accordion__wrapper">
+        <h1 class="title__accordion">FAQ</h1>
+        <div class="questions__accordions">
+          <div class="question-answer__accordion">
+            <div class="question">
+              <h3 class="title__question">
+                How many team members can I invite?
+              </h3>
+              <img src="/images/icon-arrow-down.svg" />
+            </div>
+            <div class="answer">
+              You can invite up to 2 additional users on the Free plan. There is
+              no limit on team members for the Premium plan.
+            </div>
+          </div>
+
+          <div class="question-answer__accordion">
+            <div class="question">
+              <h3 class="title__question">
+                What is the maximum file upload size?
+              </h3>
+              <img src="/images/icon-arrow-down.svg" />
+            </div>
+            <div class="answer">
+              No more than 2GB. All files in your account must fit your allotted
+              storage space.
+            </div>
+          </div>
+
+          <div class="question-answer__accordion">
+            <div class="question">
+              <h3 class="title__question">How do I reset my password?</h3>
+              <img src="/images/icon-arrow-down.svg" />
+            </div>
+            <div class="answer">
+              Click “Forgot password” from the login page or “Change password”
+              from your profile page. A reset link will be emailed to you.
+            </div>
+          </div>
+
+          <div class="question-answer__accordion">
+            <div class="question">
+              <h3 class="title__question">Can I cancel my subscription?</h3>
+              <img src="/images/icon-arrow-down.svg" />
+            </div>
+            <div class="answer">
+              Yes! Send us a message and we’ll process your request no questions
+              asked.
+            </div>
+          </div>
+
+          <div class="question-answer__accordion">
+            <div class="question">
+              <h3 class="title__question">
+                Do you provide additional support?
+              </h3>
+              <img src="/images/icon-arrow-down.svg" />
+            </div>
+            <div class="answer">
+              Chat and email support is available 24/7. Phone lines are open
+              during normal business hours.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="footer-attribute">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >
+      Coded by <a href="#">CodingAlong</a>
+    </div>
+
+    <script>
+      this.addEventListener("DOMContentLoaded", () => {
+        const questions = document.querySelectorAll(".question");
+        questions.forEach((question) =>
+          question.addEventListener("click", () => {
+            if (question.parentNode.classList.contains("active")) {
+              question.parentNode.classList.toggle("active");
+            } else {
+              questions.forEach((question) =>
+                question.parentNode.classList.remove("active")
+              );
+              question.parentNode.classList.add("active");
+            }
+          })
+        );
+      });
+    </script>
+  </body>
+</html>

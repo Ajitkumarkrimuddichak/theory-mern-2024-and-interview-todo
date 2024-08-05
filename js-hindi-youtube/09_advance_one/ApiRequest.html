@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      API Request | XMLHttpRequest used old coding | but This Time used Fetch
+      API
+    </title>
+  </head>
+  <body style="background-color: #c6b2b2">
+    0 UNSENT Client has been created. open() not called yet. 1 OPENED open() has
+    been called. 2 HEADERS_RECEIVED send() has been called, and headers and
+    status are available. 3 LOADING Downloading; responseText holds partial
+    data. 4 DONE The operation is complete.
+  </body>
+  <script>
+    // const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    // const xhr = new XMLHttpRequest();
+    // xhr.open("GET", requestUrl);
+    // xhr.onreadystatechange = function () {
+    //   console.log(xhr.readyState);
+    //   if (xhr.readyState === 4) {
+    //     const data = JSON.parse(this.responseText);
+    //     console.log(typeof data);
+    //     console.log(data.followers);
+    //   }
+    // };
+    // xhr.send();
+
+    //(or)
+    // Declare a constant variable 'requestUrl' and assign it the URL of the GitHub API endpoint for user 'hiteshchoudhary'
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+
+    // Create a new instance of XMLHttpRequest and assign it to the variable 'xhr'
+    const xhr = new XMLHttpRequest();
+
+    // Initialize a new request using the 'open' method
+    // The first argument "GET" specifies the HTTP method to be used
+    // The second argument 'requestUrl' specifies the URL to which the request is sent
+    xhr.open("GET", requestUrl);
+
+    // Assign an anonymous function to the 'onreadystatechange' event handler
+    // This function will be called whenever the 'readyState' property of 'xhr' changes
+    xhr.onreadystatechange = function () {
+      // Log the current 'readyState' of 'xhr' to the console
+      console.log(xhr.readyState);
+
+      // Check if the 'readyState' is 4, which means the request is complete and the response is ready
+      if (xhr.readyState === 4) {
+        // Parse the JSON response text ('this.responseText') into a JavaScript object and assign it to the variable 'data'
+        const data = JSON.parse(this.responseText);
+
+        // Log the type of the 'data' variable to the console
+        // It should log "object" since the JSON response has been parsed into a JavaScript object
+        console.log(typeof data);
+
+        // Log the 'followers' property of the 'data' object to the console
+        // This contains the number of followers the user 'hiteshchoudhary' has on GitHub
+        console.log(data.followers);
+      }
+    };
+
+    // Send the HTTP request to the server
+    // Since this is a 'GET' request, no additional data is sent with the request
+    xhr.send();
+  </script>
+</html>
+
+<!-- What is console.log() / Debugging tool ?
+  Ans :- console JS ka Part / technically hai bhi or Nahi bhi hai bahut sara part jo JS ka part hi nahi hota hai Ex:- document.
+  Actually console hai kya yek Debugging tool Debugger hai Browser ka Developer Tool hai JS ka run time Inject jarata hai
+-->
